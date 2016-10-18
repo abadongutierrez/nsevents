@@ -1,0 +1,41 @@
+{{> header}}
+<h2>Events</h2>
+<a href="{{newPath}}">New Event</a>
+<div class="container-fluid">
+   {{#eventRows}}
+   <div class="row">
+      {{#.}}
+      <div class="col-md-4">
+         {{#event}}
+         <div class="event-box">
+            <div class="event-name">{{value.name}}</div>
+            <div class="event-date">{{value.beginAt}}</div>
+            <div class="event-description">{{value.description}}</div>
+            <div class="event-venue">at <a href="{{venuesPath}}/{{value.venue.id}}">{{value.venue.name}}</a></div>
+            <div>
+               <a class="btn btn-default btn-xs" href="{{showPath}}/{{value.id}}">Show</a>
+               <form action="{{showPath}}/{{value.id}}" class="link" method="post"><input name="_method" type="hidden" value="delete" /><a class="btn btn-danger btn-xs" data-confirm="Are you sure?" data-submit="parent" href="#" rel="nofollow">Delete</a></form>
+            </div>
+         </div>
+         {{/event}}
+         {{^event}}
+         <div class="event-box">No Event</div>
+         {{/event}}
+      </div>
+      {{/.}}
+   </div>
+</div>
+{{/eventRows}}
+
+<script>
+   $(document).ready(function() {
+      $('a[data-confirm]').click(function(ev) {
+         if (confirm($(this).attr('data-confirm')) && $(this).attr('data-submit') === 'parent') {
+            return $(this).parent().submit();
+         }
+         return false;
+      });
+   });
+</script>
+
+{{> footer}}

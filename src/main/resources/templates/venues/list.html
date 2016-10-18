@@ -1,0 +1,40 @@
+{{> header}}
+<h2>Venues</h2>
+<a href="{{newPath}}">New Venue</a>
+<table class="table table-bordered">
+   <thead>
+      <tr>
+         <td>ID</td>
+         <td>Name</td>
+         <td>Address</td>
+
+         <td></td>
+      </tr>
+   </thead>
+   <tbody>
+   {{#venues}}
+      <tr>
+         <td>{{id}}</td>
+         <td><a href="{{showPath}}/{{id}}">{{name}}</a></td>
+         <td>{{addressDisplay}}</td>
+
+         <td>
+            <a class="btn btn-default btn-xs" href="{{showPath}}/{{id}}">Show</a>
+            <form action="{{showPath}}/{{id}}" class="link" method="post"><input name="_method" type="hidden" value="delete" /><a class="btn btn-danger btn-xs" data-confirm="Are you sure?" data-submit="parent" href="#" rel="nofollow">Delete</a></form>
+         </td>
+      </tr>
+   {{/venues}}
+   </tbody>
+</table>
+
+<script>
+   $(document).ready(function() {
+      $('a[data-confirm]').click(function(ev) {
+         if (confirm($(this).attr('data-confirm')) && $(this).attr('data-submit') === 'parent') {
+            return $(this).parent().submit();
+         }
+         return false;
+      });
+   });
+</script>
+{{> footer}}

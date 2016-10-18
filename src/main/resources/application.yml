@@ -1,0 +1,19 @@
+spring:
+    datasource:
+        url: jdbc:postgresql://localhost:5432/nsevents_dev
+        username: postgres
+        password:
+
+logging:
+  level:
+    org:
+      springframework:
+        web: INFO
+      hibernate: DEBUG
+    com:
+      nearsoft:
+        nsevents: DEBUG
+
+# Flyway is enabled by default
+# flyway.enabled=true # Enable flyway.
+# flyway.locations=classpath:db/migration # locations of migrations scripts

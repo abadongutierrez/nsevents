@@ -1,0 +1,16 @@
+body { padding-top: 70px; }
+
+.event-box {
+    padding: 10px;
+    width: 100%;
+    height: 200px;
+    border-style: groove;
+}
+
+.event-name {
+    font-size: x-large;
+}
+
+.event-description {
+    font-style: italic;
+}

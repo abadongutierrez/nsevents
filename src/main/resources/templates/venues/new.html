@@ -1,0 +1,30 @@
+{{> header}}
+<h2>New Venue</h2>
+<form action="{{actionPath}}" method="POST">
+   <div class="form-group">
+      <label for="name">Name</label>
+      <input type="text" class="form-control" id="name" name="name" placeholder="Name">
+   </div>
+   <div class="form-group">
+      <label for="addressLine1">Address Line 1</label>
+      <input type="text" class="form-control" id="addressLine1" name="addressLine1" placeholder="Adress Line 1">
+   </div>
+   <div class="form-group">
+      <label for="addressLine2">Address Line 2</label>
+      <input type="text" class="form-control" id="addressLine2" name="addressLine2" placeholder="Adress Line 2">
+   </div>
+   <div class="form-group">
+      <label for="city">City</label>
+      <input type="text" class="form-control" id="city" name="city" placeholder="City">
+   </div>
+   <div class="form-group">
+      <label for="postalCode">Postal Code</label>
+      <input type="text" class="form-control" id="postalCode" name="postalCode" placeholder="Postal Code">
+   </div>
+   <div class="form-group">
+      <label for="country">Country</label>
+      <input type="text" class="form-control" id="country" name="country" placeholder="Country">
+   </div>
+   <button type="submit" class="btn btn-default">Submit</button>
+</form>
+{{> footer}}

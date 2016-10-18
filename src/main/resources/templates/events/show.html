@@ -1,0 +1,13 @@
+{{> header}}
+<h2>Event</h2>
+<a href="{{backPath}}">Back</a>
+<ul>
+   <li>ID: {{event.id}}</li>
+   <li>Name: {{event.name}}</li>
+   <li>Description: {{event.description}}</li>
+   <li>Begins: {{event.beginAt}}</li>
+   <li>Ends: {{event.endAt}}</li>
+   <li>Capacity: {{event.capacity}}</li>
+   <li>Venue: <a href="{{venuesPath}}/{{event.venue.id}}">{{event.venue.name}}</a></li>
+</ul>
+{{> footer}}
